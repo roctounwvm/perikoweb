@@ -1,5 +1,9 @@
 import streamlit as st
 
+# -----------------------------
+# CONFIGURACIÓN
+# -----------------------------
+
 st.set_page_config(
     page_title="Perikoweb",
     page_icon="🐶",
@@ -15,39 +19,59 @@ st.markdown("""
 
 .stApp {
     background: linear-gradient(135deg, #f7f7f7, #e9eef5);
+    color: black;
 }
 
+/* Todo el texto negro */
+h1, h2, h3, h4, h5, h6,
+p, label, div, span {
+    color: black;
+}
+
+/* Título */
 .main-title {
     text-align: center;
     font-size: 50px;
     font-weight: 800;
     margin-bottom: 5px;
+    color: black;
 }
 
+/* Subtítulo */
 .subtitle {
     text-align: center;
-    color: #666;
+    color: black;
     font-size: 18px;
     margin-bottom: 35px;
 }
 
+/* Tarjetas */
 .card {
     background: white;
     padding: 25px;
     border-radius: 20px;
     margin: 20px 0;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
+    color: black;
 }
 
+/* Títulos de sección */
 .section-title {
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 15px;
+    color: black;
 }
 
+/* Botones */
+button {
+    color: black !important;
+}
+
+/* Pie de página */
 .footer {
     text-align: center;
-    color: #888;
+    color: black;
     margin-top: 50px;
     padding: 20px;
 }
@@ -79,7 +103,7 @@ st.markdown(
 
 st.markdown("""
 <div class="card">
-<div class="section-title">📸 Galería random</div>
+    <div class="section-title">📸 Galería random</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -114,7 +138,7 @@ if st.button("🍐 Peraperosa", use_container_width=True):
 
 st.markdown("""
 <div class="card">
-<div class="section-title">🔎 Busca algo</div>
+    <div class="section-title">🔎 Busca algo</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -171,7 +195,8 @@ st.link_button(
 
 st.markdown("""
 <div class="footer">
-    🐾 Perikoweb 🐾<br>
+    🐾 Perikoweb 🐾
+    <br><br>
     <small>Una web completamente innecesaria pero necesaria.</small>
 </div>
 """, unsafe_allow_html=True)
