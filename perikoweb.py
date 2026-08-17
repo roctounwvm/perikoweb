@@ -1,73 +1,177 @@
 import streamlit as st
 
-espacio = st.empty()
+st.set_page_config(
+    page_title="Perikoweb",
+    page_icon="🐶",
+    layout="centered"
+)
 
-contraseña = "pablocolorcarton"
+# -----------------------------
+# ESTILO
+# -----------------------------
 
-respuesta = espacio.text_input("contraseña", type="password")
+st.markdown("""
+<style>
 
-if respuesta == contraseña:
-    espacio.empty()
+.stApp {
+    background: linear-gradient(135deg, #f7f7f7, #e9eef5);
+}
 
-    st.title("bienvenido a la perikoweb")
-    st.text("en esta web encontraras cosas ramdom que encontre en mi galeria")
+.main-title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
 
-    if st.button("perro perroso"):
-        st.image("perrofino.jpg")
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
 
-    if st.button("oso ososo"):
-        st.image("5fdfa37ae6bd8.jpeg")
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
+}
 
-    if st.button("gato abogadoso"):
-        st.image("gato.jfif")
+.section-title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
 
-    if st.button("gato huevoso"):
-        st.image("gato huevoso.jpeg")
+.footer {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+    padding: 20px;
+}
 
-    if st.button("hmmm jejejhhh auuhhhhhhhh"):
-        st.image("hmmm.jpeg")
+</style>
+""", unsafe_allow_html=True)
 
-    if st.button("peraperosa"):
-        st.image("peraperosa.jfif")
 
-    respuesta2 = st.text_input("escribe algo")
+# -----------------------------
+# ENCABEZADO
+# -----------------------------
 
-    if respuesta2 == "bimbo":
-        st.image("bimbo.jfif")
+st.markdown(
+    '<div class="main-title">🐶 Perikoweb 🐱</div>',
+    unsafe_allow_html=True
+)
 
-    if respuesta2 == "ivan":
-        st.image("ivan.jfif")
+st.markdown(
+    '<div class="subtitle">'
+    'Un lugar donde guardo cosas random que encuentro en mi galería.'
+    '</div>',
+    unsafe_allow_html=True
+)
 
-    if respuesta2 == "perikoclasico":
-        st.image("perikoclasico.jfif")
 
-    if respuesta2 == "recinosavion":
-        st.image("recinosavion.jfif")
+# -----------------------------
+# GALERÍA
+# -----------------------------
 
-    if respuesta2 == "yupi":
-        st.image("yupi.jfif")
+st.markdown("""
+<div class="card">
+<div class="section-title">📸 Galería random</div>
+</div>
+""", unsafe_allow_html=True)
 
-    # ANUNCIO AL FINAL
-    st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-    .arcade-text {
-        font-family: 'Press Start 2P', monospace;
-        font-size: 24px;
-        color: #00ffff;
-        text-align: center;
-        text-shadow: 4px 4px #ff00ff;
-        margin: 50px 0 25px 0;
-    }
-    </style>
+if st.button("🐶 Perro perroso", use_container_width=True):
+    st.image("perrofino.jpg")
 
-    <div class="arcade-text">
-        PRUEBA EL NUEVO PERIKOS BET ARCADE
-    </div>
-    """, unsafe_allow_html=True)
 
-    st.link_button(
-        "🎮 ENTRAR AL ARCADE 🎮",
-        "https://perikos-arcade.onrender.com/"
-    )
+if st.button("🐻 Oso ososo", use_container_width=True):
+    st.image("5fdfa37ae6bd8.jpeg")
+
+
+if st.button("🐱 Gato abogadoso", use_container_width=True):
+    st.image("gato.jfif")
+
+
+if st.button("🥚 Gato huevoso", use_container_width=True):
+    st.image("gato huevoso.jpeg")
+
+
+if st.button("🤨 Hmmm jejejhhh auuhhhhhhhh", use_container_width=True):
+    st.image("hmmm.jpeg")
+
+
+if st.button("🍐 Peraperosa", use_container_width=True):
+    st.image("peraperosa.jfif")
+
+
+# -----------------------------
+# BUSCADOR
+# -----------------------------
+
+st.markdown("""
+<div class="card">
+<div class="section-title">🔎 Busca algo</div>
+</div>
+""", unsafe_allow_html=True)
+
+respuesta2 = st.text_input(
+    "Escribe una palabra",
+    placeholder="Prueba con alguna palabra..."
+)
+
+
+if respuesta2.lower() == "bimbo":
+    st.image("bimbo.jfif")
+
+elif respuesta2.lower() == "ivan":
+    st.image("ivan.jfif")
+
+elif respuesta2.lower() == "perikoclasico":
+    st.image("perikoclasico.jfif")
+
+elif respuesta2.lower() == "recinosavion":
+    st.image("recinosavion.jfif")
+
+elif respuesta2.lower() == "yupi":
+    st.image("yupi.jfif")
+
+
+# -----------------------------
+# PERIKOS BET ARCADE
+# -----------------------------
+
+st.markdown("""
+<div class="card" style="text-align:center;">
+
+<h2>🎮 Perikos Bet Arcade</h2>
+
+<p>
+¿Te aburriste de la Perikoweb?
+<br>
+Prueba ahora el nuevo Perikos Bet Arcade.
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.link_button(
+    "🎮 Entrar al Perikos Bet Arcade",
+    "https://perikos-arcade.onrender.com/",
+    use_container_width=True
+)
+
+
+# -----------------------------
+# PIE DE PÁGINA
+# -----------------------------
+
+st.markdown("""
+<div class="footer">
+    🐾 Perikoweb 🐾<br>
+    <small>Una web completamente innecesaria pero necesaria.</small>
+</div>
+""", unsafe_allow_html=True)
